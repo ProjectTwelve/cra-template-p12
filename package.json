@@ -1,8 +1,30 @@
 {
   "name": "cra-template-p12",
   "version": "0.0.1",
-  "private": true,
+  "license": "MIT",
+  "author": "Project Twelve <chengreen0511@gmail.com>",
+  "description": "A quick start Create React App template",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "cra-template",
+    "template",
+    "eslint",
+    "react-router",
+    "react-router-dom",
+    "typescript",
+    "prettier",
+    "reocil"
+  ],
   "main": "template.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProjectTwelve/cra-template-p12",
+    "directory": "/"
+  },
+  "bugs": {
+    "url": "https://github.com/ProjectTwelve/cra-template-p12/issues"
+  },
   "files": [
     "template",
     "template.json"
@@ -21,10 +43,16 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.3",
+    "postcss-less": "6.0.0",
     "prettier": "2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "stylelint": "14.13.0",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-standard": "28.0.0",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
@@ -33,13 +61,21 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean-files": "rm -rf ./template/public ./template/src",
-    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public",
+    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp .eslintignore .eslintrc .prettierrc .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
     "prepublishOnly": "yarn clean-files && yarn copy-files",
     "checkTs": "tsc --noEmit",
     "eslint": "eslint --ext js,ts,tsx",
     "lint": "yarn run eslint src",
-    "lint:fix": "yarn run eslint --fix src"
+    "lint:fix": "yarn run eslint --fix src",
+    "lint:style": "stylelint src/**/*.{css,less,scss}",
+    "prettify": "prettier --write",
+    "prepare": "husky install"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest",
+    "access": "public"
   },
   "browserslist": {
     "production": [
@@ -60,5 +96,16 @@
   },
   "engines": {
     "node": ">=14.x"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn run eslint --fix"
+    ],
+    "*.{css,less}": [
+      "yarn run lint:style"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
   }
 }
