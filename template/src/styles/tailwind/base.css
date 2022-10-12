@@ -1,0 +1,36 @@
+@tailwind base;
+
+/* Your own custom base styles */
+
+@layer base {
+    * {
+        outline: none;
+    }
+
+    html,
+    body {
+        color: #FFF;
+        background: #0E142C;
+        font-family: "Poppins", sans-serif;
+    }
+
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    @font-face {
+        font-family: 'D-DIN';
+        font-weight: bold;
+        src: url(https://cdn1.p12.games/fonts/D-DIN-Bold.ttf);
+    }
+
+    @font-face {
+        font-family: 'TTLakes';
+        font-weight: bold;
+        src: url(https://cdn1.p12.games/fonts/TTLakes.otf);
+    }
+}

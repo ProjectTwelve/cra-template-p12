@@ -1,6 +1,6 @@
 {
   "name": "cra-template-p12",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "license": "MIT",
   "author": "Project Twelve <chengreen0511@gmail.com>",
   "description": "A quick start Create React App template",
@@ -66,8 +66,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json",
-    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp .eslintignore .eslintrc .prettierrc .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
+    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky ./template/.vscode && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp -a ./.vscode template/.vscode && cp .eslintignore .eslintrc.js .prettierrc .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
     "prepublishOnly": "yarn clean-files && yarn copy-files",
     "checkTs": "tsc --noEmit",
     "eslint": "eslint --ext js,ts,tsx",
