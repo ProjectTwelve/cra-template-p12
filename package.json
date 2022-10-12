@@ -15,6 +15,13 @@
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "eslint": "^8.25.0",
+    "eslint-config-alloy": "^4.5.1",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -28,13 +35,11 @@
     "eject": "react-scripts eject",
     "clean-files": "rm -rf ./template/public ./template/src",
     "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public",
-    "prepublishOnly": "yarn clean-files && yarn copy-files"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "prepublishOnly": "yarn clean-files && yarn copy-files",
+    "checkTs": "tsc --noEmit",
+    "eslint": "eslint --ext js,ts,tsx",
+    "lint": "yarn run eslint src",
+    "lint:fix": "yarn run eslint --fix src"
   },
   "browserslist": {
     "production": [
@@ -47,5 +52,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint-plugin-react": "^7.31.10"
+  },
+  "engines": {
+    "node": ">=14.x"
   }
 }
