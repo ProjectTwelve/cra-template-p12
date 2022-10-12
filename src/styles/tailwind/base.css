@@ -1,5 +1,7 @@
 @tailwind base;
 
+/* Your own custom base styles */
+
 @layer base {
     * {
         outline: none;
