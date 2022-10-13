@@ -11,7 +11,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
   const [count, setCount] = useRecoilState(userCount);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-red-300 ">
+    <div className="flex flex-col items-center justify-center h-screen text-red-300">
       <img src={P12Logo} alt="" />
 
       <Web3Status />
