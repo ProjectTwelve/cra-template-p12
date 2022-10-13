@@ -17,5 +17,5 @@
     "jsx": "react-jsx"
   },
   "include": ["src", "e2e"],
-  "exclude": ["**/templates/*", "**/node_modules/*"]
+  "exclude": ["**/templates/*", "**/node_modules/*", "*.test.tsx"]
 }

@@ -30,6 +30,7 @@
     "template.json"
   ],
   "dependencies": {
+    "@tanstack/react-query": "4.10.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -37,37 +38,42 @@
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
     "autoprefixer": "10.4.12",
     "eslint": "^8.25.0",
-    "eslint-config-alloy": "^4.5.1",
+    "eslint-config-alloy": "4.7.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "4.6.0",
+    "ethers": "5.7.1",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "postcss": "8.4.17",
     "postcss-less": "6.0.0",
     "prettier": "2.7.1",
+    "prettier-plugin-tailwindcss": "0.1.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "6.4.2",
     "react-scripts": "5.0.1",
+    "recoil": "0.7.6",
     "stylelint": "14.13.0",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-standard": "28.0.0",
     "tailwindcss": "3.1.8",
     "typescript": "^4.8.4",
-    "web-vitals": "^2.1.4",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0"
+    "wagmi": "0.6.8",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky ./template/.vscode && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json ./template/.stylelintrc ./template/postcss.config.js ./template/tailwind.config.js ",
-    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp -a ./.vscode template/.vscode && cp .eslintignore .eslintrc.js .prettierrc .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json .stylelintrc postcss.config.js tailwind.config.js template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
+    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky ./template/.vscode && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc.js ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json ./template/.stylelintrc ./template/postcss.config.js ./template/tailwind.config.js ",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp -a ./.vscode template/.vscode && cp .eslintignore .eslintrc.js .prettierrc.js .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json .stylelintrc postcss.config.js tailwind.config.js template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
     "prepublishOnly": "yarn clean-files && yarn copy-files",
     "checkTs": "tsc --noEmit",
     "eslint": "eslint --ext js,ts,tsx",
@@ -99,7 +105,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "yarn run eslint --fix"
+      "yarn run eslint --fix src"
     ],
     "*.{css,less}": [
       "yarn run lint:style"

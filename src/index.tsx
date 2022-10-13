@@ -3,12 +3,43 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createClient, WagmiConfig } from 'wagmi';
+import { RecoilRoot } from 'recoil';
+import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ScrollToTop from './layouts/ScrollToTop';
+import { metaMaskConnector, provider } from './connectors';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+if (!root) throw new Error('Failed to find the root element');
+
+const client = createClient({
+  autoConnect: true,
+  connectors: [metaMaskConnector],
+  provider,
+});
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <WagmiConfig client={client}>
+    <RecoilRoot>
+      <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          <ScrollToTop />
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </QueryClientProvider>
+      </BrowserRouter>
+    </RecoilRoot>
+  </WagmiConfig>,
 );
 
 // If you want to start measuring performance in your app, pass a function
