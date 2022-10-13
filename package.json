@@ -1,6 +1,6 @@
 {
   "name": "cra-template-p12",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "author": "Project Twelve <chengreen0511@gmail.com>",
   "description": "A quick start Create React App template",
@@ -41,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "autoprefixer": "10.4.12",
+    "cra-bundle-analyzer": "0.1.1",
     "eslint": "^8.25.0",
     "eslint-config-alloy": "4.7.0",
     "eslint-config-prettier": "8.5.0",
@@ -59,6 +60,7 @@
     "react-router-dom": "6.4.2",
     "react-scripts": "5.0.1",
     "recoil": "0.7.6",
+    "serve": "14.0.1",
     "stylelint": "14.13.0",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-standard": "28.0.0",
@@ -72,8 +74,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky ./template/.vscode && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc.js ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json ./template/.stylelintrc ./template/postcss.config.js ./template/tailwind.config.js ",
-    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp -a ./.vscode template/.vscode && cp .eslintignore .eslintrc.js .prettierrc.js .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json .stylelintrc postcss.config.js tailwind.config.js template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
+    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky ./template/.vscode && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc.js ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json ./template/.stylelintrc ./template/postcss.config.js ./template/tailwind.config.js ./template/.env",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp -a ./.vscode template/.vscode && cp .eslintignore .eslintrc.js .prettierrc.js .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json .stylelintrc postcss.config.js tailwind.config.js .env template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
     "prepublishOnly": "yarn clean-files && yarn copy-files",
     "checkTs": "tsc --noEmit",
     "eslint": "eslint --ext js,ts,tsx",
@@ -81,7 +83,11 @@
     "lint:fix": "yarn run eslint --fix src",
     "lint:style": "stylelint src/**/*.{css,less,scss}",
     "prettify": "prettier --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build:serve": "yarn build && serve -s build",
+    "build:profile": "yarn build --profile && serve -s build",
+    "analyze": "yarn build && source-map-explorer 'build/static/js/*.js'",
+    "analyzer": "yarn build && npx cra-bundle-analyzer"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

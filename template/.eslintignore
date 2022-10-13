@@ -1,9 +1,12 @@
-# don't ever lint node_modules
-node_modules
-# don't lint build output (make sure it's set to your correct build folder name)
-dist
 public
-# don't lint nyc coverage output
 coverage
-
-template/.eslintrc.js
+build/*
+docs/*
+templates/*
+src/react-app-env.d.ts
+src/serviceWorker.ts
+e2e/jest.config.js
+e2e/puppeteer_standalone.js
+e2e/app.test.tsx
+jest-puppeteer.config.js
+node_modules/

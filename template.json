@@ -1,6 +1,7 @@
 {
   "package": {
     "dependencies": {
+      "@tanstack/react-query": "4.10.3",
       "@testing-library/jest-dom": "^5.16.5",
       "@testing-library/react": "^13.4.0",
       "@testing-library/user-event": "^13.5.0",
@@ -8,29 +9,36 @@
       "@types/node": "^16.11.65",
       "@types/react": "^18.0.21",
       "@types/react-dom": "^18.0.6",
+      "@typescript-eslint/eslint-plugin": "^5.40.0",
+      "@typescript-eslint/parser": "^5.40.0",
       "autoprefixer": "10.4.12",
+      "cra-bundle-analyzer": "0.1.1",
       "eslint": "^8.25.0",
-      "eslint-config-alloy": "^4.5.1",
+      "eslint-config-alloy": "4.7.0",
       "eslint-config-prettier": "8.5.0",
       "eslint-plugin-prettier": "4.2.1",
       "eslint-plugin-react": "^7.30.1",
       "eslint-plugin-react-hooks": "4.6.0",
+      "ethers": "5.7.1",
       "husky": "8.0.1",
       "lint-staged": "13.0.3",
       "postcss": "8.4.17",
       "postcss-less": "6.0.0",
       "prettier": "2.7.1",
+      "prettier-plugin-tailwindcss": "0.1.13",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
+      "react-router-dom": "6.4.2",
       "react-scripts": "5.0.1",
+      "recoil": "0.7.6",
+      "serve": "14.0.1",
       "stylelint": "14.13.0",
       "stylelint-config-prettier": "9.0.3",
       "stylelint-config-standard": "28.0.0",
       "tailwindcss": "3.1.8",
       "typescript": "^4.8.4",
-      "web-vitals": "^2.1.4",
-      "@typescript-eslint/eslint-plugin": "^5.40.0",
-      "@typescript-eslint/parser": "^5.40.0"
+      "wagmi": "0.6.8",
+      "web-vitals": "^2.1.4"
     },
     "scripts": {
       "start": "react-scripts start",
@@ -43,7 +51,11 @@
       "lint:fix": "yarn run eslint --fix src",
       "lint:style": "stylelint src/**/*.{css,less,scss}",
       "prettify": "prettier --write",
-      "prepare": "husky install"
+      "prepare": "husky install",
+      "build:serve": "yarn build && serve -s build",
+      "build:profile": "yarn build --profile && serve -s build",
+      "analyze": "yarn build && source-map-explorer 'build/static/js/*.js'",
+      "analyzer": "yarn build && npx cra-bundle-analyzer"
     },
     "engines": {
       "node": ">=14.x"

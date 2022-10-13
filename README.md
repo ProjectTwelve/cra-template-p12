@@ -65,6 +65,14 @@ Router via React Router v5.2.0 and is set on 'AppRouter.tsx' and included in 'in
 
 The code is set for [Recoil](https://medium.com/react-courses/integrate-recoil-with-typescript-to-share-your-state-across-react-components-8cf1a3910fae)
 
+## Testing a template
+
+To test a template locally, pass the file path to the directory of your template source using the file: prefix.
+
+```bash
+npx create-react-app my-app --template file:../path/to/your/template/cra-template-[template-name]
+```
+
 ## Coverage
 
 To set coverage we can use Jest. Jest allow us to create reports in different format and set where we want to collect these reports from (or not collect them from), as well as ensure the coverageThreshold. Take a look at my 'package.json' settings;
