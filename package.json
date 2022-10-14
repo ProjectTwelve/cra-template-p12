@@ -33,7 +33,7 @@
     "@tanstack/react-query": "4.10.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "14.4.3",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
@@ -86,6 +86,8 @@
     "prepare": "husky install",
     "build:serve": "yarn build && serve -s build",
     "build:profile": "yarn build --profile && serve -s build",
+    "coverage": "yarn test -- --coverage",
+    "test:clean": "rimraf ./coverage",
     "analyze": "yarn build && source-map-explorer 'build/static/js/*.js'",
     "analyzer": "yarn build && npx cra-bundle-analyzer"
   },
