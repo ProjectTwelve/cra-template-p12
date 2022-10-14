@@ -1,24 +1,3 @@
-// {
-//   "printWidth": 128,
-//   "tabWidth": 2,
-//   "useTabs": false,
-//   "semi": true,
-//   "singleQuote": true,
-//   "quoteProps": "as-needed",
-//   "jsxSingleQuote": false,
-//   "trailingComma": "all",
-//   "bracketSpacing": true,
-//   "bracketSameLine": false,
-//   "arrowParens": "always",
-//   "rangeStart": 0,
-//   "requirePragma": false,
-//   "insertPragma": false,
-//   "proseWrap": "preserve",
-//   "htmlWhitespaceSensitivity": "css",
-//   "vueIndentScriptAndStyle": false,
-//   "endOfLine": "lf",
-//   "embeddedLanguageFormatting": "auto"
-// }
 // .prettierrc.js
 module.exports = {
   // max 128 characters per line

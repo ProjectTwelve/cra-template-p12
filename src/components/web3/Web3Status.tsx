@@ -10,13 +10,16 @@ export default function Web3Status() {
   if (address) {
     if (chain?.unsupported) {
       return (
-        <button className="ml-4 rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600" onClick={() => switchNetwork?.()}>
+        <button
+          className=" my-6 min-w-[170px] rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
+          onClick={() => switchNetwork?.()}
+        >
           Wrong Network
         </button>
       );
     }
     return (
-      <button className="ml-4 rounded bg-indigo-500 px-4 py-2 text-xs text-white hover:bg-indigo-600">
+      <button className=" my-6 min-w-[170px] rounded bg-indigo-500 px-4 py-2 text-xs text-white hover:bg-indigo-600">
         <p className="text-xs leading-6">{shortenAddress(address)}</p>
       </button>
     );
