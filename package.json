@@ -1,6 +1,6 @@
 {
   "name": "cra-template-p12",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Project Twelve <chengreen0511@gmail.com>",
   "description": "A quick start Create React App template",
@@ -30,6 +30,7 @@
     "template.json"
   ],
   "dependencies": {
+    "@craco/craco": "6.4.5",
     "@tanstack/react-query": "4.10.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -70,12 +71,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
-    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky ./template/.vscode && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc.js ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json ./template/.stylelintrc ./template/postcss.config.js ./template/tailwind.config.js ./template/.env",
-    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp -a ./.vscode template/.vscode && cp .eslintignore .eslintrc.js .prettierrc.js .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json .stylelintrc postcss.config.js tailwind.config.js .env template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
+    "clean-files": "rm -rf ./template/public ./template/src ./template/.husky ./template/.vscode && rm -f ./template/.eslintignore ./template/.eslintrc.js ./template/.prettierrc.js ./template/.gitattributes ./template/gitignore ./template/.npmrc ./template/.nvmrc ./template/.prettierignore ./template/README.md ./template/tsconfig.json ./template/.stylelintrc ./template/postcss.config.js ./template/tailwind.config.js ./template/.env ./template/craco.config.js",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp -a ./.husky template/.husky && cp -a ./.vscode template/.vscode && cp .eslintignore .eslintrc.js .prettierrc.js .gitattributes .npmrc .nvmrc .prettierignore tsconfig.json .stylelintrc postcss.config.js tailwind.config.js .env craco.config.js template/ && cp README_CRA.md template/README.md && cp .gitignore template/gitignore ",
     "prepublishOnly": "yarn clean-files && yarn copy-files",
     "checkTs": "tsc --noEmit",
     "eslint": "eslint --ext js,ts,tsx",
